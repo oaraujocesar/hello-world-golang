@@ -8,5 +8,10 @@ const helloPrefix = "Hello, "
 const helloSufix = "!"
 
 func Hello(name string) string {
+
+	if name == "" {
+		name = "World"
+	}
+
 	return helloPrefix + name + helloSufix
 }

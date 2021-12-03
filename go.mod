@@ -1,3 +1,3 @@
-module github.com/oaraujocesar/hello
+module github.com/oaraujocesar/hello-world-golang
 
 go 1.17

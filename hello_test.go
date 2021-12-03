@@ -12,15 +12,36 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("Say hello to people", func(t *testing.T) {
-		result := Hello("César")
+		result := Hello("César", "")
 		expected := "Hello, César!"
 
 		assertCorrectMessage(t, result, expected)
 	})
 
 	t.Run("Return the default message when no name is provided", func(t *testing.T) {
-		result := Hello("")
+		result := Hello("", "")
 		expected := "Hello, World!"
+
+		assertCorrectMessage(t, result, expected)
+	})
+
+	t.Run("Return the correct greeting when the language is Spanish", func(t *testing.T) {
+		result := Hello("César", "Spanish")
+		expected := "Hola, César!"
+
+		assertCorrectMessage(t, result, expected)
+	})
+
+	t.Run("Return the correct greeting when the language is French", func(t *testing.T) {
+		result := Hello("César", "French")
+		expected := "Bonjour, César!"
+
+		assertCorrectMessage(t, result, expected)
+	})
+
+	t.Run("Return the correct greeting when the language is Portuguese", func(t *testing.T) {
+		result := Hello("César", "Portuguese")
+		expected := "Olá, César!"
 
 		assertCorrectMessage(t, result, expected)
 	})
